@@ -27,8 +27,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthText.text = "Health: " + health;
-        moneyText.text = "Money: " + money;
+        //healthText.text = "Health: " + health;
+        //moneyText.text = "Money: " + money;
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public void breach(int damage)
     {
         health -= damage;
-        healthText.text = "Health: " + health;
+        //healthText.text = "Health: " + health;
         if (health <= 0)
         {
             GameOver();
@@ -55,6 +55,6 @@ public class GameManager : MonoBehaviour
     public void moneyEarned(int wealth)
     {
         money += wealth;
-        moneyText.text = "Money: " + money;
+        //moneyText.text = "Money: " + money;
     }
 }
