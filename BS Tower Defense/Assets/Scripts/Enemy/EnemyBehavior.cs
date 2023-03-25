@@ -26,6 +26,13 @@ public class EnemyBehavior : MonoBehaviour
     }
     #endregion
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        Enemies._enemies.Add(gameObject);
+    }
+
+
     void Start()
     {
         hitpoints = 5;
@@ -47,12 +54,18 @@ public class EnemyBehavior : MonoBehaviour
         if (hitpoints <= 0)
         {
             Death(true);
+            Enemies._enemies.Remove(gameObject);
+            Destroy(gameObject);
         }
 
     }
 
     public virtual void Death(bool slain)
     {
+
+        Destroy(gameObject);
+        Enemies._enemies.Remove(gameObject);
+
         if (slain)
         {
             gm.moneyEarned(wealth);
