@@ -35,12 +35,12 @@ public class EnemyBehavior : MonoBehaviour
 
     void Start()
     {
-        hitpoints = 5;
+        hitpoints = 50;
         hitpoints *= scale;
         maxHealth = hitpoints;
         //wealth = 5;
         damage = 1;
-        gameObject.GetComponent<NavMeshAgent>().speed = 2;
+        //gameObject.GetComponent<NavMeshAgent>().speed = 2;
         armored = false;
     }
 

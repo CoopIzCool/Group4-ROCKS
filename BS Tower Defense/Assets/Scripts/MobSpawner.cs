@@ -55,6 +55,7 @@ public class MobSpawner : MonoBehaviour
 
     public void Update()
     {
+        /*
         if(remainders <=0 )
         {
             spawnWaveButton.gameObject.SetActive(true);
@@ -62,6 +63,11 @@ public class MobSpawner : MonoBehaviour
         else
         {
             spawnWaveButton.gameObject.SetActive(false);
+        }
+        */
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            activateSpawner();
         }
     }
 
@@ -109,7 +115,7 @@ public class MobSpawner : MonoBehaviour
             if (remainders <= 0)
             {
                 remainders = 0;
-                waveText.text = "Wave Number: " + waveNumber;
+                //waveText.text = "Wave Number: " + waveNumber;
                 StartCoroutine(spawnWave());
             }
         }    
@@ -137,6 +143,7 @@ public class MobSpawner : MonoBehaviour
         while (maxCost > 0)
         {
             //process of determining what enemies are spawned, may change later
+            /*
             if (Random.Range(1, 100) > weightedValue && maxCost > 1)
             {
                 if (maxCost >= 10 && Random.Range(1, 20) <= 8)
@@ -210,10 +217,13 @@ public class MobSpawner : MonoBehaviour
                 waveOrder.Add(0);
                 maxCost -= 1;
             }
+            */
+            waveOrder.Add(0);
+            maxCost -= 1;
         }
         for (int i = 0; i < waveOrder.Count; i++)
         {
-            Debug.Log(tags[waveOrder[i]]);
+            //Debug.Log(tags[waveOrder[i]]);
             remainders++;
         }
 
