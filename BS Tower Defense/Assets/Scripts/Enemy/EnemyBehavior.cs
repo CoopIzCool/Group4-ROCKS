@@ -55,7 +55,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             Death(true);
             Enemies._enemies.Remove(gameObject);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
     }
@@ -63,6 +63,7 @@ public class EnemyBehavior : MonoBehaviour
     public virtual void Death(bool slain)
     {
 
+        Destroy(gameObject);
         Enemies._enemies.Remove(gameObject);
 
         if (slain)
