@@ -21,42 +21,32 @@ public class PlacementManager : MonoBehaviour
     }
     public void GetCurrentTile()
     {
-        Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = GetMousePosition();
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(mousePos, Vector2.zero, 0f, _mask);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, new Vector2(0, 0), 0.1f, _mask, -100, 100);
 
-        if (hits.Length > 0)
+        if (hit.collider != null)
         {
-            for (int i = 0; i < hits.Length; i++)
+            if (hit.collider.gameObject)
             {
-                if (hits[i].collider.gameObject.CompareTag("Tile"))
-                {
-                    _hoverTile = hits[i].collider.gameObject;
-                    break;
-                }
+                _hoverTile = hit.collider.gameObject;
             }
         }
-        else
-        {
-            _hoverTile = null;
-        }
+    }
+    public Vector2 GetMousePosition()
+    {
+        return _camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public bool CheckForTower()
     {
         bool towerOnSlot = false;
-        Collider2D[] cols = Physics2D.OverlapPointAll(_camera.ScreenToWorldPoint(Input.mousePosition), _towerMask);
+        Vector2 mousePos = GetMousePosition();
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, new Vector2(0, 0), 0.1f, _towerMask, -100, 100);
 
-        if (cols.Length > 0)
+        if (hit.collider != null)
         {
-            foreach (Collider2D collider in cols)
-            {
-                if (collider.gameObject.CompareTag("Tower"))
-                {
-                    towerOnSlot = true;
-                    break;
-                }
-            }
+            towerOnSlot = true;
         }
 
         return towerOnSlot;
@@ -72,6 +62,8 @@ public class PlacementManager : MonoBehaviour
                 GameObject newTowerObj = Instantiate(_towerObject);
                 newTowerObj.layer = LayerMask.NameToLayer("Tower");
                 newTowerObj.transform.position = _hoverTile.transform.position;
+
+                EndBuilding();
             }
         }
     }
@@ -101,7 +93,7 @@ public class PlacementManager : MonoBehaviour
 
     public void Update()
     {
-        if (isBuilding == true)
+        if (isBuilding = true)
         {
             if (_dummyPlacement != null)
             {
@@ -115,14 +107,7 @@ public class PlacementManager : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            PlaceBuilding();
-
-            //Debug.Log("mouse clicked");
-        }
-
-        //Debug.Log("MOUSE POS");
+       //Debug.Log("MOUSE POS");
     }
 }
 
