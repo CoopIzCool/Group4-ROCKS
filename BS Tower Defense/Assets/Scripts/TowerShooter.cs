@@ -29,7 +29,7 @@ public class TowerShooter : MonoBehaviour
 
         foreach (GameObject enemy in Enemies._enemies)
         {
-            if (enemy != null)
+            if (enemy != null && enemy.activeInHierarchy)
             {
                 float _distance = (transform.position - enemy.transform.position).magnitude;
 
