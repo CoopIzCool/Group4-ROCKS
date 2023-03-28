@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 856584900108359803}
   - component: {fileID: 856584900108359802}
   - component: {fileID: 856584900108359801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlacementTile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
