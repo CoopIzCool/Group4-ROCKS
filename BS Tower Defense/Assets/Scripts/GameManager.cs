@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int money;
     [SerializeField]
+    private int _premiumMoney;
+    [SerializeField]
     private int health;
     [SerializeField]
     public Text healthText;
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
     #endregion Fields
 
     public int Money { get { return money; } }
+    public int PremiumMoney { get { return _premiumMoney; } }
+
 
     // Start is called before the first frame update
     void Start()

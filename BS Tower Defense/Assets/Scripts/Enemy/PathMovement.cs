@@ -26,6 +26,7 @@ public class PathMovement : MonoBehaviour
     {
         get { return distanceMoved; }
     }
+    public NavMeshAgent Agent { get { return agent; } }
     #endregion
 
 
@@ -46,15 +47,17 @@ public class PathMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.paused == false)
+        if (agent.enabled)
         {
-            agent.SetDestination(target.position);
-            distanceMoved += speed;
+            if (gameManager.paused == false)
+            {
+                agent.SetDestination(target.position);
+                distanceMoved += speed;
+            }
+            else
+            {
+                agent.SetDestination(transform.position);
+            }
         }
-        else
-        {
-            agent.SetDestination(transform.position);
-        }
-        
     }
 }
