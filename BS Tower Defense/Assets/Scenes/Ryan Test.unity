@@ -12883,7 +12883,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-
 --- !u!1 &2081708851
 GameObject:
   m_ObjectHideFlags: 0
@@ -13029,6 +13028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlacementTile
       objectReference: {fileID: 0}
+    - target: {fileID: 856584900108359800, guid: 04d39d83e3582104fa02569028ac4ca6, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 856584900108359803, guid: 04d39d83e3582104fa02569028ac4ca6, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -13134,5 +13137,13 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1660020370}
+    - target: {fileID: 6761738242169259555, guid: 2f816484f4d116641841c1faabec5e7d, type: 3}
+      propertyPath: _mask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761738242169259555, guid: 2f816484f4d116641841c1faabec5e7d, type: 3}
+      propertyPath: _towerMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f816484f4d116641841c1faabec5e7d, type: 3}
