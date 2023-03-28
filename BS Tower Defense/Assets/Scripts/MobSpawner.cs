@@ -55,7 +55,7 @@ public class MobSpawner : MonoBehaviour
 
     public void Update()
     {
-        /*
+        
         if(remainders <=0 )
         {
             spawnWaveButton.gameObject.SetActive(true);
@@ -64,7 +64,7 @@ public class MobSpawner : MonoBehaviour
         {
             spawnWaveButton.gameObject.SetActive(false);
         }
-        */
+        
         if(Input.GetKeyDown(KeyCode.Space))
         {
             activateSpawner();
@@ -100,41 +100,6 @@ public class MobSpawner : MonoBehaviour
                 spacing = 0.15f;
             }
         }
-    }
-
-    void Awake()
-    {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
-
-    public void activateSpawner()
-    {
-        if(gameManager.paused == false)
-        {
-            if (remainders <= 0)
-            {
-                remainders = 0;
-                //waveText.text = "Wave Number: " + waveNumber;
-                StartCoroutine(spawnWave());
-            }
-        }    
-    }
-
-    public void zombieDefeat()
-    {
-        remainders--;
-
-        //check if it was the last zombie, if it was end the game
-        if (remainders <= 0 && waveNumber >= finalWave)
-        {
-            SceneManager.LoadScene("WinScreen");
-        }
-    }
-
-    public void outsideSpawns()
-    {
-        remainders++;
     }
 
     public void CreateWave()
@@ -228,4 +193,41 @@ public class MobSpawner : MonoBehaviour
         }
 
     }
+
+    void Awake()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+
+    public void activateSpawner()
+    {
+        if(gameManager.paused == false)
+        {
+            if (remainders <= 0)
+            {
+                remainders = 0;
+                //waveText.text = "Wave Number: " + waveNumber;
+                StartCoroutine(spawnWave());
+            }
+        }    
+    }
+
+    public void zombieDefeat()
+    {
+        remainders--;
+
+        //check if it was the last zombie, if it was end the game
+        if (remainders <= 0 && waveNumber >= finalWave)
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
+    }
+
+    public void outsideSpawns()
+    {
+        remainders++;
+    }
+
+
 }

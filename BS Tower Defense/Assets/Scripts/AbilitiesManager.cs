@@ -48,40 +48,50 @@ public class AbilitiesManager : MonoBehaviour
         // TODO: change this to a clickable UI button function, needs separate method
         if (Input.GetKeyDown(KeyCode.Q) && _nukeCooldown == 0f)
         {
-            // TODO: Reduce premium funds
-
-            // Get all enemies
-            GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-            // Kill each enemy
-            foreach(GameObject _enemy in _enemies)
-            {
-                _enemy.GetComponent<EnemyBehavior>().Death(true);
-            }
-
-            // Reset the cooldown
-            _nukeCooldown = 30f;
+            Nuke();
         }
 
         // If the user presses E, has no cooldown, and has the premium funds - initiate FREEZE
         // TODO: change this to a clickable UI button function, needs separate method
         if (Input.GetKeyDown(KeyCode.E) && _freezeCooldown == 0f)
         {
-            // Start timer
-            _freezeTimer = 5f;
-
-            // TODO: Reduce premium funds
-
-            // Get all enemies
-            GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-            // Freeze each enemy
-            foreach (GameObject _enemy in _enemies)
-            {
-                _enemy.GetComponent<PathMovement>().Agent.enabled = false;
-            }
-
-            _frozen = true;
+            Freeze();
         }
+    }
+
+    public void Nuke()
+    {
+        // TODO: Reduce premium funds
+
+        // Get all enemies
+        GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        // Kill each enemy
+        foreach (GameObject _enemy in _enemies)
+        {
+            _enemy.GetComponent<EnemyBehavior>().Death(true);
+        }
+
+        // Reset the cooldown
+        _nukeCooldown = 30f;
+    }
+
+    public void Freeze()
+    {
+        // Start timer
+        _freezeTimer = 5f;
+
+        // TODO: Reduce premium funds
+
+        // Get all enemies
+        GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        // Freeze each enemy
+        foreach (GameObject _enemy in _enemies)
+        {
+            _enemy.GetComponent<PathMovement>().Agent.enabled = false;
+        }
+
+        _frozen = true;
     }
 }
