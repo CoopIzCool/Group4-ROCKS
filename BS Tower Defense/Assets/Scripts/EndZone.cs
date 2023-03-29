@@ -11,6 +11,7 @@ public class EndZone : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Hit");
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             gm.breach(collision.gameObject.GetComponent<EnemyBehavior>().damage);
