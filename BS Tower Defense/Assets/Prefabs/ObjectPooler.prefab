@@ -51,3 +51,12 @@ MonoBehaviour:
   - tag: Skeleton
     prefab: {fileID: 1388717742355394895, guid: 9c5cd5db9a10ccf4d89003ff937fcbdc, type: 3}
     size: 40
+  - tag: Beast
+    prefab: {fileID: 1137450227433888369, guid: 29fec2c119dde4747a6eb23c92f4795c, type: 3}
+    size: 10
+  - tag: Plague
+    prefab: {fileID: 1137450227433888369, guid: 770440e2dc3041645aafbfa6a1b18cc5, type: 3}
+    size: 15
+  - tag: Knight
+    prefab: {fileID: 1137450227433888369, guid: 8fccd5b51b772b744af5a2126cf73776, type: 3}
+    size: 10

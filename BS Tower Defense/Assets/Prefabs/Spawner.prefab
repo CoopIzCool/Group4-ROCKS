@@ -48,6 +48,9 @@ MonoBehaviour:
   tags:
   - Enemy
   - Skeleton
+  - Beast
+  - Plague
+  - Knight
   spawnPoint: {fileID: 0}
   endPoint: {fileID: 0}
   spawnWaveButton: {fileID: 0}

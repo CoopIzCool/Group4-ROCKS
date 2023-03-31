@@ -139,11 +139,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 350
   maxHealth: 350
-  wealth: 10
+  wealth: 15
   damage: 2
   armored: 0
   scale: 0
   blighted: 0
+  bufferTime: 2
 --- !u!58 &4174723763350000789
 CircleCollider2D:
   m_ObjectHideFlags: 0

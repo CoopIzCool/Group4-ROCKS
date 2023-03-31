@@ -137,13 +137,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5957a1663267ecf4f88c3c89d1c569f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 200
-  maxHealth: 200
-  wealth: 10
-  damage: 2
+  hitpoints: 300
+  maxHealth: 300
+  wealth: 15
+  damage: 3
   armored: 1
   scale: 0
   blighted: 0
+  bufferTime: 2
 --- !u!58 &4174723763350000789
 CircleCollider2D:
   m_ObjectHideFlags: 0

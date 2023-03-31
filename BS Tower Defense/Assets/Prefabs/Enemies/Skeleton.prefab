@@ -143,6 +143,8 @@ MonoBehaviour:
   damage: 1
   armored: 0
   scale: 0
+  blighted: 0
+  bufferTime: 0.15
 --- !u!58 &6134091181389800059
 CircleCollider2D:
   m_ObjectHideFlags: 0
