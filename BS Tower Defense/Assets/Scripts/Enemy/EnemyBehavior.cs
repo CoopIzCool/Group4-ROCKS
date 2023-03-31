@@ -66,8 +66,9 @@ public class EnemyBehavior : MonoBehaviour
 
         Enemies._enemies.Remove(gameObject);
 
-        if (slain)
+        if(slain)
         {
+
             gm.moneyEarned(wealth);
         }
         gameObject.transform.GetComponentInParent<MobSpawner>().zombieDefeat();
