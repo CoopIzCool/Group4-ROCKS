@@ -15,7 +15,7 @@ public class EnemyBehavior : MonoBehaviour
     private GameManager gm;
     public bool armored;
     public float scale;
-
+    public bool blighted; 
     #endregion
 
     #region Properties

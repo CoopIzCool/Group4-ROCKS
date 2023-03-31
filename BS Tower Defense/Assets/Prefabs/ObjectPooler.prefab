@@ -49,5 +49,5 @@ MonoBehaviour:
     prefab: {fileID: 1137450227433888369, guid: 0068c23996dddd14abdb1988cd86868f, type: 3}
     size: 15
   - tag: Skeleton
-    prefab: {fileID: 1137450227433888369, guid: f3c94c7bd6937804c9a123dc13f61f36, type: 3}
+    prefab: {fileID: 1388717742355394895, guid: 9c5cd5db9a10ccf4d89003ff937fcbdc, type: 3}
     size: 40

@@ -183,11 +183,23 @@ public class MobSpawner : MonoBehaviour
                 maxCost -= 1;
             }
             */
+            
             if (maxCost > 1)
             {
-                if(Random.Range(1, 3) > 1)
+                int randomValue = Random.Range(1, 3);
+                //Debug.Log(randomValue);
+                if (randomValue > 1)
                 {
                     waveOrder.Add(1);
+                    waveOrder.Add(1);
+                    waveOrder.Add(1);
+                    waveOrder.Add(1);
+                    waveOrder.Add(1);
+                    maxCost -= 1;
+                }
+                else
+                {
+                    waveOrder.Add(0);
                     maxCost -= 1;
                 }
             }

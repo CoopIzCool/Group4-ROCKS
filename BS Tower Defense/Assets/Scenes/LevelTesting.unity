@@ -15568,7 +15568,7 @@ PrefabInstance:
     - target: {fileID: 2703675289449297461, guid: 6080fbead8a2e3649bbe81a0f5ef23f3, type: 3}
       propertyPath: pools.Array.data[1].prefab
       value: 
-      objectReference: {fileID: 1137450227433888369, guid: f3c94c7bd6937804c9a123dc13f61f36, type: 3}
+      objectReference: {fileID: 1388717742355394895, guid: 9c5cd5db9a10ccf4d89003ff937fcbdc, type: 3}
     - target: {fileID: 4195044648863356691, guid: 6080fbead8a2e3649bbe81a0f5ef23f3, type: 3}
       propertyPath: m_Name
       value: ObjectPooler
