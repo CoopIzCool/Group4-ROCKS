@@ -9,6 +9,7 @@ public class TowerShooter : MonoBehaviour
     [SerializeField] private float _timeBtwProjectiles;
 
 
+
     public GameObject currentTarget;
 
     private float _nextTimeToShoot;
@@ -54,10 +55,15 @@ public class TowerShooter : MonoBehaviour
 
     private void ShootProjectiles()
     {
-        GameObject newBullet = Instantiate(bullet);
+        GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
 
         if (currentTarget != null)
         {
+            Vector3 direction = (currentTarget.transform.position - transform.position).normalized;
+            float _angleOfInstanciation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            newBullet.transform.rotation = Quaternion.AngleAxis(_angleOfInstanciation, Vector3.forward);
+
+
             EnemyBehavior enemyBehavior = currentTarget.GetComponent<EnemyBehavior>();
             enemyBehavior.takeDamage(50);
         }
