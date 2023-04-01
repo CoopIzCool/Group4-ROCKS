@@ -15,7 +15,8 @@ public class EnemyBehavior : MonoBehaviour
     private GameManager gm;
     public bool armored;
     public float scale;
-
+    public bool blighted;
+    public float bufferTime;
     #endregion
 
     #region Properties
@@ -65,8 +66,9 @@ public class EnemyBehavior : MonoBehaviour
 
         Enemies._enemies.Remove(gameObject);
 
-        if (slain)
+        if(slain)
         {
+
             gm.moneyEarned(wealth);
         }
         gameObject.transform.GetComponentInParent<MobSpawner>().zombieDefeat();
