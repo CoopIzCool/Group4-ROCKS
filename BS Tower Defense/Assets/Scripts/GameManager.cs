@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     public int PremiumMoney { get { return _premiumMoney; } }
 
 
+    public int _costTower1;
+    public int _costTower2;
+    public int _costTower3;
+
     // Start is called before the first frame update
     void Start()
     {
