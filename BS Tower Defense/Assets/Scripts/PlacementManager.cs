@@ -179,23 +179,7 @@ public class PlacementManager : MonoBehaviour
         //Debug.Log("MOUSE POS");
     }
 
-    private void OnEnable()
-    {
-        // button listeners for the tower buttons
-        _towerObjectButton.onClick.AddListener(() => 
-        TowerSelect(_towerObject, _gameManager._costTower1)); // in this case the player selects button 1
-        _towerAOEButton.onClick.AddListener(() => 
-        TowerSelect(_towerAOE2, _gameManager._costTower2));
-        _towerLaserButton.onClick.AddListener(() => 
-        TowerSelect(_towerLaser3, _gameManager._costTower3));
-    }
-
-    private void OnDisable()
-    {
-        _towerObjectButton.onClick.RemoveAllListeners();
-        _towerAOEButton.onClick.RemoveAllListeners();
-        _towerLaserButton.onClick.RemoveAllListeners();
-    }
+    
 
     private void TowerSelect(GameObject towerPrefab, int towerCost)
     {
@@ -218,6 +202,62 @@ public class PlacementManager : MonoBehaviour
         }
 
          _towerObjectSelected = towerPrefab;
+    }
+
+
+    private void OnEnable()
+    {
+        //on button enable
+        TowerButtonListeners();
+    }
+
+    private void OnDisable()
+    {
+        //on button disable
+        Tower1ButtonRemoveListener();
+        Tower2ButtonRemoveListener();
+        Tower3ButtonRemoveListener();
+    }
+
+
+    public void TowerButtonListeners()
+    {
+        // button listener methods for the tower buttons
+        Tower1ButtonListener();
+        TowerAOE2ButtonListener();
+        TowerLaser3ButtonListener();
+    }
+    public void Tower1ButtonListener()
+    {
+        _towerObjectButton.onClick.AddListener(() =>
+        TowerSelect(_towerObject, _gameManager._costTower1)); // in this case the player selects button 1
+    }
+
+    public void Tower1ButtonRemoveListener()
+    {
+        _towerObjectButton.onClick.RemoveAllListeners();
+    }
+
+    public void TowerAOE2ButtonListener()
+    {
+        _towerAOEButton.onClick.AddListener(() =>
+      TowerSelect(_towerAOE2, _gameManager._costTower2)); // in this case the player selects button 2
+    }
+
+    public void Tower2ButtonRemoveListener()
+    {
+        _towerAOEButton.onClick.RemoveAllListeners();
+    }
+
+    public void TowerLaser3ButtonListener()
+    {
+        _towerLaserButton.onClick.AddListener(() =>
+      TowerSelect(_towerLaser3, _gameManager._costTower3)); // in this case the player selects button 3
+    }
+
+    public void Tower3ButtonRemoveListener()
+    {
+        _towerLaserButton.onClick.RemoveAllListeners();
     }
 }
 
