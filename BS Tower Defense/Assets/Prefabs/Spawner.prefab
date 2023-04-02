@@ -51,6 +51,9 @@ MonoBehaviour:
   - Beast
   - Plague
   - Knight
+  - Reaper
+  - Spectre
+  - Void
   spawnPoint: {fileID: 0}
   endPoint: {fileID: 0}
   spawnWaveButton: {fileID: 0}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4174723763350000789}
   - component: {fileID: -3589947501784677775}
   m_Layer: 0
-  m_Name: PlagueBearer
+  m_Name: Reaperlings
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.037824854, g: 0.4716981, b: 0.21987456, a: 1}
+  m_Color: {r: 0.5849056, g: 0.58292747, b: 0.42212528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,14 +137,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5957a1663267ecf4f88c3c89d1c569f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 175
-  maxHealth: 175
-  wealth: 10
-  damage: 2
-  armored: 0
+  hitpoints: 120
+  maxHealth: 120
+  wealth: 5
+  damage: 1
+  armored: 1
   scale: 0
-  blighted: 1
-  bufferTime: 1
+  blighted: 0
+  bufferTime: 0.2
 --- !u!58 &4174723763350000789
 CircleCollider2D:
   m_ObjectHideFlags: 0
