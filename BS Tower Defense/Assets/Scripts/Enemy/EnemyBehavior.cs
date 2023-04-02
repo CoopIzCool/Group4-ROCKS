@@ -30,7 +30,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Awake()
     {
-        Enemies._enemies.Add(gameObject);
+        //Enemies._enemies.Add(gameObject);
     }
 
 

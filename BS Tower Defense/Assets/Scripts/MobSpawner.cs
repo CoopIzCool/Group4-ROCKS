@@ -106,20 +106,18 @@ public class MobSpawner : MonoBehaviour
 
     public void CreateWave()
     {
-        maxCost = waveNumber;
+        maxCost = (int)(waveNumber * 1.4f);
         while (maxCost > 0)
         {
             //Enemies to spawn on round 6
             if (waveNumber > 5)
             {
                 int randomValue = Random.Range(0, 8);
-                int[] costs = { 1, 1, 2, 2, 3,3,3,5 };
+                int[] costs = { 1, 1, 2, 2, 3,3,3,4 };
                 if (maxCost - costs[randomValue] >= 0)
                 {
                     if (randomValue == 1 || randomValue == 5)
                     {
-                        waveOrder.Add(randomValue);
-                        waveOrder.Add(randomValue);
                         waveOrder.Add(randomValue);
                         waveOrder.Add(randomValue);
                         waveOrder.Add(randomValue);
@@ -144,8 +142,6 @@ public class MobSpawner : MonoBehaviour
                         waveOrder.Add(1);
                         waveOrder.Add(1);
                         waveOrder.Add(1);
-                        waveOrder.Add(1);
-                        waveOrder.Add(1);
                         maxCost -= 1;
                     }
                     else
@@ -161,8 +157,6 @@ public class MobSpawner : MonoBehaviour
                 Debug.Log(randomValue);
                 if (randomValue > 1)
                 {
-                    waveOrder.Add(1);
-                    waveOrder.Add(1);
                     waveOrder.Add(1);
                     waveOrder.Add(1);
                     waveOrder.Add(1);

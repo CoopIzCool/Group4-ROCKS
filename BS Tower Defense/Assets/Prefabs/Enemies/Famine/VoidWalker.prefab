@@ -99,7 +99,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5957a1663267ecf4f88c3c89d1c569f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1200
-  maxHealth: 1200
+  hitpoints: 1500
+  maxHealth: 1500
   wealth: 20
   damage: 5
   armored: 0
