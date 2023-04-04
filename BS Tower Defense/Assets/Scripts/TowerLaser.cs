@@ -8,8 +8,6 @@ public class TowerLaser : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _timeBtwProjectiles;
 
-
-
     public GameObject currentTarget;
 
     private float _nextTimeToShoot;
@@ -53,7 +51,33 @@ public class TowerLaser : MonoBehaviour
 
     public void LaserWeaponShooter()
     {
+        GameObject _laserShootObject = Instantiate(_laserObject, transform.position, Quaternion.identity);
+        LineRenderer _laserRenderer = _laserObject.GetComponent<LineRenderer>();
 
+        if (currentTarget != null)
+        {
+            //Vector3 _targetPos = currentTarget.transform.position;
+
+            _laserRenderer.SetPosition(0, transform.position);
+            _laserRenderer.SetPosition(1, currentTarget.transform.position);
+
+            EnemyBehavior _enemyB = currentTarget.GetComponent<EnemyBehavior>();
+            _enemyB.takeDamage(_damage);
+
+            LaserEnabler(_laserShootObject);
+            StartCoroutine(LaserDisabler(_laserShootObject, 1f));
+        }
+    }
+
+    IEnumerator LaserDisabler(GameObject _laserObj, float _delay)
+    {
+        yield return new WaitForSeconds(_delay);
+        _laserObj.GetComponent<LineRenderer>().enabled = false;
+    }
+
+    public void LaserEnabler(GameObject _laser)
+    {
+        _laser.GetComponent<LineRenderer>().enabled = true;
     }
 
     // Update is called once per frame
