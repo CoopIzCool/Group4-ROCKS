@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerShooter : MonoBehaviour
+public class TowerLaser : MonoBehaviour
 {
     [SerializeField] private float _range;
     [SerializeField] private float _damage;
@@ -14,7 +14,7 @@ public class TowerShooter : MonoBehaviour
 
     private float _nextTimeToShoot;
 
-    public GameObject bullet;
+    public GameObject _laserObject;
 
     // Start is called before the first frame update
     void Start()
@@ -51,27 +51,9 @@ public class TowerShooter : MonoBehaviour
 
     }
 
-    private void ShootProjectiles()
+    public void LaserWeaponShooter()
     {
-        
 
-        if (currentTarget != null)
-        {
-            ShootLogic();
-
-            EnemyBehavior enemyBehavior = currentTarget.GetComponent<EnemyBehavior>();
-            enemyBehavior.takeDamage(50);
-        }
-    }
-
-    void ShootLogic()
-    {
-        GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-        (Vector3 direction, float _angleOfInstanciation) =
-                ((currentTarget.transform.position - transform.position).normalized,
-                Mathf.Atan2((currentTarget.transform.position - transform.position).normalized.y,
-                (currentTarget.transform.position - transform.position).normalized.x) * Mathf.Rad2Deg);
-        newBullet.transform.rotation = Quaternion.AngleAxis(_angleOfInstanciation, Vector3.forward);
     }
 
     // Update is called once per frame
@@ -83,7 +65,7 @@ public class TowerShooter : MonoBehaviour
         {
             if (currentTarget != null)
             {
-                ShootProjectiles();
+                LaserWeaponShooter();
                 _nextTimeToShoot = Time.time + _timeBtwProjectiles;
             }
         }
