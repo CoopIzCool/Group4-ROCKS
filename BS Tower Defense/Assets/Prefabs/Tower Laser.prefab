@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6859285134138327326}
   - component: {fileID: 8342701573384207643}
+  - component: {fileID: 1799405830897999872}
   m_Layer: 0
   m_Name: Tower Laser
   m_TagString: Untagged
@@ -84,3 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1799405830897999872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879866838471404019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f796955c3ec0a6641ae127a1f8c980da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _range: 15
+  _damage: 50
+  _timeBtwProjectiles: 0.5
+  _laserRenderer: {fileID: 0}
+  currentTarget: {fileID: 0}
+  _laserObject: {fileID: 8950027363856194561, guid: e276b18453e428547bc69c3e96227b5b, type: 3}

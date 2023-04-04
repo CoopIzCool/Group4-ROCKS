@@ -17264,7 +17264,7 @@ MonoBehaviour:
   moneyText: {fileID: 245085019}
   gameOverUI: {fileID: 0}
   paused: 0
-  _costTower1: 0
+  _costTower1: 5
   _costTower2: 10
   _costTower3: 15
 --- !u!4 &1968581630
