@@ -8,6 +8,8 @@ public class TowerLaser : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _timeBtwProjectiles;
 
+    private Gradient gradient = new Gradient();
+
     public GameObject currentTarget;
 
     private float _nextTimeToShoot;
@@ -61,12 +63,32 @@ public class TowerLaser : MonoBehaviour
             _laserRenderer.SetPosition(0, transform.position);
             _laserRenderer.SetPosition(1, currentTarget.transform.position);
 
+
+            (_laserRenderer.startColor, _laserRenderer.endColor) = (Color.red, Color.blue);
+            LaserGradient();
+
+            _laserRenderer.colorGradient = gradient;
+
+            (_laserRenderer.startWidth, _laserRenderer.endWidth) = (0.3f, 0.2f);
+
             EnemyBehavior _enemyB = currentTarget.GetComponent<EnemyBehavior>();
             _enemyB.takeDamage(_damage);
 
             LaserEnabler(_laserShootObject);
             StartCoroutine(LaserDisabler(_laserShootObject, 1f));
         }
+    }
+
+    public void LaserGradient()
+    {
+        /* https://docs.unity3d.com/ScriptReference/LineRenderer-colorGradient.html */
+
+
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color.red, 0.0f), new GradientColorKey(Color.blue, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(1.0f, 1.0f) }
+        );
+
     }
 
     IEnumerator LaserDisabler(GameObject _laserObj, float _delay)
