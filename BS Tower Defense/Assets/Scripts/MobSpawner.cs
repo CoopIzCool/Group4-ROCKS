@@ -194,6 +194,7 @@ public class MobSpawner : MonoBehaviour
         {
             if (remainders <= 0)
             {
+                this.gameObject.GetComponent<AudioSource>().Play();
                 remainders = 0;
                 //waveText.text = "Wave Number: " + waveNumber;
                 StartCoroutine(spawnWave());
