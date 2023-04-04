@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1600
     height: 817
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 55
+  controlID: 52
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 423
     height: 767
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 104
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 57
+  controlID: 105
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,23 +346,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Enemies
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Enemies
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ryanc\Desktop\RIT\Spring 2023\IGME 603\Project 4\Group4-ROCKS\BS
     Tower Defense
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 80}
-    m_SelectedIDs: 4e750000
-    m_LastClickedID: 30030
-    m_ExpandedIDs: 0000000040750000427500004475000046750000487500004a7500004c7500004e75000050750000527500005475000056750000587500005a7500005c7500005e750000607500008a75000000ca9a3b
+    scrollPos: {x: 0, y: 152}
+    m_SelectedIDs: d26d0000
+    m_LastClickedID: 28114
+    m_ExpandedIDs: 00000000b26d0000b46d0000b66d0000b86d0000ba6d0000bc6d0000c06d0000c26d0000c46d0000c66d0000c86d0000ca6d0000cc6d0000ce6d0000d06d0000d26d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000040750000427500004475000046750000487500004a7500004c7500004e75000050750000527500005475000056750000587500005a7500005c7500005e75000060750000
+    m_ExpandedIDs: 00000000b26d0000b46d0000b66d0000b86d0000ba6d0000bc6d0000be6d0000c06d0000c26d0000c46d0000c66d0000c86d0000ca6d0000cc6d0000ce6d0000d06d0000d26d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -518,9 +518,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 80750000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e230ffff8a31ffffae34ffff4035ffff1c40ffff0841ffff1442fffff442ffff0e44ffff1e45fffffa45ffff565bffff665cffff8c5dffff3ca2ffff18a4ffff1ca5ffff1aa6ffff3cc3ffff8cc3ffff58c4ffff48c5ffffbcc6ffffa2caffff3cd6ffff98e4ffffdee5ffff80e6ffff2ce7ffff32e8ffffcee9ffffaaeaffff70ecffffbeecffffeeeeffff12b00000b2b4000078b8000042bd00000ebe0000b2c30000b8c3000000d0000052d0000058d0000090d0000026d1000036e10000dae200006ee400006efc0000a6fc0000ccfc00004efe000088ff00008eff0000
+      m_ExpandedIDs: 2ad6ffff76d6ffff24d8ffffc4d8ffff9ed9ffffaed9ffff5cdaffff00dbffff12dbffff8adfffffcae0ffff0ae1ffff8ae2ffffece2ffff28e5ffff02e6ffff14e6ffffc2e6ffff52e7ffff64e7ffff54f6fffff4fffffff06900006cad000076ad00008cad000016ae00003aae00005aae00005eae0000b0ae0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -791,9 +791,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -8.202505, y: -8.210704, z: 0.091731004}
+    m_Target: {x: 421.06128, y: 162.26558, z: -2.8985722}
     speed: 2
-    m_Value: {x: -8.202505, y: -8.210704, z: 0.091731004}
+    m_Value: {x: 413.50842, y: 157.79729, z: -3.0193622}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -844,9 +844,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.156028
+    m_Target: 256.33875
     speed: 2
-    m_Value: 10.156028
+    m_Value: 268.41754
   m_Ortho:
     m_Target: 1
     speed: 2
