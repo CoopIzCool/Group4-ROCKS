@@ -32,11 +32,9 @@ public class TowerShooter : MonoBehaviour
         {
             if (enemy != null && enemy.activeInHierarchy)
             {
-                float _distance = (transform.position - enemy.transform.position).magnitude;
-
-                if (_distance < distance)
+                if ((transform.position - enemy.transform.position).magnitude < distance)
                 {
-                    distance = _distance;
+                    distance = (transform.position - enemy.transform.position).magnitude;
                     currentNearestEnemy = enemy;
                 }
             }
@@ -55,18 +53,25 @@ public class TowerShooter : MonoBehaviour
 
     private void ShootProjectiles()
     {
-        GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+        
 
         if (currentTarget != null)
         {
-            Vector3 direction = (currentTarget.transform.position - transform.position).normalized;
-            float _angleOfInstanciation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            newBullet.transform.rotation = Quaternion.AngleAxis(_angleOfInstanciation, Vector3.forward);
-
+            ShootLogic();
 
             EnemyBehavior enemyBehavior = currentTarget.GetComponent<EnemyBehavior>();
             enemyBehavior.takeDamage(50);
         }
+    }
+
+    void ShootLogic()
+    {
+        GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+        (Vector3 direction, float _angleOfInstanciation) =
+                ((currentTarget.transform.position - transform.position).normalized,
+                Mathf.Atan2((currentTarget.transform.position - transform.position).normalized.y,
+                (currentTarget.transform.position - transform.position).normalized.x) * Mathf.Rad2Deg);
+        newBullet.transform.rotation = Quaternion.AngleAxis(_angleOfInstanciation, Vector3.forward);
     }
 
     // Update is called once per frame
