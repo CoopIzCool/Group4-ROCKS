@@ -32,6 +32,9 @@ public class MobSpawner : MonoBehaviour
     private Transform spawnSpot;
     [SerializeField]
     private float scale;
+    public bool multipleEnds;
+    [SerializeField]
+    private Transform secondEndPoint;
     #endregion
 
     #region Properties
@@ -80,7 +83,22 @@ public class MobSpawner : MonoBehaviour
             //create new zombie
             GameObject enemy = objPool.SpawnFromPool(tags[waveOrder[i]], spawnSpot.position, spawnSpot.rotation);
             enemy.GetComponent<NavMeshAgent>().enabled = true;
-            enemy.gameObject.GetComponent<PathMovement>().Target = endPoint;
+            if(multipleEnds)
+            {
+                int randomPath = Random.Range(0, 2);
+                if(randomPath == 0)
+                {
+                    enemy.gameObject.GetComponent<PathMovement>().Target = endPoint;
+                }
+                else
+                {
+                    enemy.gameObject.GetComponent<PathMovement>().Target = secondEndPoint;
+                }
+            }
+            else
+            {
+                enemy.gameObject.GetComponent<PathMovement>().Target = endPoint;
+            }
             enemy.GetComponent<EnemyBehavior>().GM = gm;
             enemy.GetComponent<EnemyBehavior>().scale = (1.0f +  ((waveNumber/(float)finalWave) * scale));
             enemy.transform.parent = gameObject.transform;

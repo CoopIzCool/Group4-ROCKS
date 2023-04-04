@@ -33,6 +33,7 @@ public class PlacementManager : MonoBehaviour
 
     private void Start()
     {
+        _towerObjectSelected = _towerObject;
         StartBuilding();
     }
 
