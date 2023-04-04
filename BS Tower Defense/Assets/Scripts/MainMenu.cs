@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("LevelSelecting");
 
         audioSource2.clip = _buttonSFX;
         audioSource2.Play();
@@ -61,4 +61,8 @@ public class MainMenu : MonoBehaviour
         audioSource2.Play();
     }
 
+    public void LoadShop()
+    {
+        SceneManager.LoadScene("IAP Shop");
+    }
 }
