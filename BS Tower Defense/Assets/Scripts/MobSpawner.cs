@@ -82,8 +82,9 @@ public class MobSpawner : MonoBehaviour
             enemy.GetComponent<NavMeshAgent>().enabled = true;
             enemy.gameObject.GetComponent<PathMovement>().Target = endPoint;
             enemy.GetComponent<EnemyBehavior>().GM = gm;
-            enemy.GetComponent<EnemyBehavior>().scale = ((1.0f + (waveNumber/(float)finalWave)) * scale);
+            enemy.GetComponent<EnemyBehavior>().scale = (1.0f +  ((waveNumber/(float)finalWave) * scale));
             enemy.transform.parent = gameObject.transform;
+            Enemies._enemies.Add(enemy);
             yield return new WaitForSeconds(spacing * enemy.GetComponent<EnemyBehavior>().bufferTime);
         }
 
@@ -91,7 +92,7 @@ public class MobSpawner : MonoBehaviour
         waveNumber++;
         incrementer++;
         //as waves increase, decrease the spawn time
-        if(incrementer >= 10)
+        if(incrementer >= 3)
         {
             incrementer = 0;
             spacing -= 0.05f;
@@ -100,29 +101,27 @@ public class MobSpawner : MonoBehaviour
                 spacing = 0.15f;
             }
         }
-        scale += 0.05f;
+        scale += Random.Range(0.05f, 0.15f);
     }
 
     public void CreateWave()
     {
-        maxCost = waveNumber;
+        maxCost = (int)(waveNumber * 1.4f);
         while (maxCost > 0)
         {
             //Enemies to spawn on round 6
-            if (maxCost > 5)
+            if (waveNumber > 5)
             {
-                int randomValue = Random.Range(0, 5);
-                int[] costs = { 1, 1, 2, 2, 3 };
+                int randomValue = Random.Range(0, 8);
+                int[] costs = { 1, 1, 2, 2, 3,3,3,4 };
                 if (maxCost - costs[randomValue] >= 0)
                 {
-                    if (randomValue == 1)
+                    if (randomValue == 1 || randomValue == 5)
                     {
-                        waveOrder.Add(1);
-                        waveOrder.Add(1);
-                        waveOrder.Add(1);
-                        waveOrder.Add(1);
-                        waveOrder.Add(1);
-                        maxCost -= 1;
+                        waveOrder.Add(randomValue);
+                        waveOrder.Add(randomValue);
+                        waveOrder.Add(randomValue);
+                        maxCost -= costs[randomValue];
                     }
                     else
                     {
@@ -132,7 +131,7 @@ public class MobSpawner : MonoBehaviour
                 }
             }
             //Enemies to spawn on round 4
-            else if(maxCost > 3)
+            else if(waveNumber > 3)
             {
                 int randomValue = Random.Range(0, 4);
                 int[] costs = { 1, 1, 2, 2 };
@@ -143,8 +142,6 @@ public class MobSpawner : MonoBehaviour
                         waveOrder.Add(1);
                         waveOrder.Add(1);
                         waveOrder.Add(1);
-                        waveOrder.Add(1);
-                        waveOrder.Add(1);
                         maxCost -= 1;
                     }
                     else
@@ -154,14 +151,12 @@ public class MobSpawner : MonoBehaviour
                     }
                 }
             }
-            else if (maxCost > 1)
+            else if (waveNumber > 1)
             {
                 int randomValue = Random.Range(1, 3);
                 Debug.Log(randomValue);
                 if (randomValue > 1)
                 {
-                    waveOrder.Add(1);
-                    waveOrder.Add(1);
                     waveOrder.Add(1);
                     waveOrder.Add(1);
                     waveOrder.Add(1);
