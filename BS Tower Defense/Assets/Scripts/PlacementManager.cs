@@ -54,6 +54,12 @@ public class PlacementManager : MonoBehaviour
                     _hoverTile = hits[i].collider.gameObject; //if yes, then hits with the collider (the raycast)
                     break;
                 }
+
+                if (hits[i].collider.gameObject.CompareTag("Tower"))
+                {
+                    CheckForTower(); //if raycast hits a collider of tower on slot, then there is a tower on that slot
+                    
+                }
             }
         }
         else
@@ -73,7 +79,10 @@ public class PlacementManager : MonoBehaviour
             {
                 if (collider.gameObject.CompareTag("Tower"))
                 {
+                    towerOnSlot = true;
                     Tower toower = collider.gameObject.GetComponent<Tower>();
+                    TowerLaser toowerlaser = collider.gameObject.GetComponent<TowerLaser>();
+                    TowerShooter toowershooter = collider.gameObject.GetComponent<TowerShooter>();
 
                     if (toower != null)
                     {
@@ -82,7 +91,7 @@ public class PlacementManager : MonoBehaviour
 
                         foreach (Vector2 posExisting in _posTowers)
                         {
-                            if (Vector2.Distance(posTower, posExisting) < 0.5f) //if they are closer than 0.5f, then there
+                            if (Vector2.Distance(posTower, posExisting) < 0.5f) //if they are closer than 0.1f, then there
                                                                                 //is a tower on the slot/tile, therefore dont place a tower there
                             {
                                 towerOnSlot = true;
@@ -95,10 +104,74 @@ public class PlacementManager : MonoBehaviour
                             _posTowers.Add(posTower);
                         }
 
+                        if (towerOnSlot)
+                        {
+                            _posTowers.Remove(posTower);
+                        }
+
                         break;
                     }
+                    
+                    if (toowerlaser != null)
+                    {
+                        //checking for the number of towers in vicinity to each other
+                        Vector2 posTower = collider.transform.position;
+
+                        foreach (Vector2 posExisting in _posTowers)
+                        {
+                            if (Vector2.Distance(posTower, posExisting) < 0.5f) //if they are closer than 0.1f, then there
+                                                                                //is a tower on the slot/tile, therefore dont place a tower there
+                            {
+                                towerOnSlot = true;
+                                break;
+                            }
+                        }
+
+                        if (!towerOnSlot)
+                        {
+                           _posTowers.Add(posTower);
+                        }
+
+                        if (towerOnSlot)
+                        {
+                            _posTowers.Remove(posTower);
+                        }
+
+                        break;
+                    }
+
+                    if (toowershooter != null)
+                    {
+                        //checking for the number of towers in vicinity to each other
+                        Vector2 posTower = collider.transform.position;
+
+                        foreach (Vector2 posExisting in _posTowers)
+                        {
+                            if (Vector2.Distance(posTower, posExisting) < 0.5f) //if they are closer than 0.1f, then there
+                                                                                //is a tower on the slot/tile, therefore dont place a tower there
+                            {
+                                towerOnSlot = true;
+                                break;
+                            }
+                        }
+
+                        if (!towerOnSlot)
+                        {
+                            _posTowers.Add(posTower);
+                        }
+
+                        if (towerOnSlot)
+                        {
+                            _posTowers.Remove(posTower);
+                        }
+
+                        break;
+                    }
+
+                    return true;
                 }
             }
+            return false;
         }
 
         return towerOnSlot;
@@ -117,11 +190,26 @@ public class PlacementManager : MonoBehaviour
                     newTowerObj.layer = LayerMask.NameToLayer("Tower");
                     newTowerObj.transform.position = _hoverTile.transform.position;
                     _gameManager.moneyEarned(-_towerSelectedCost);
+
+                    OldTowerInactiveOnSlot();
                 } 
                 else
                 {
                     Debug.Log("You do not have enough money to place this tower");
                 }
+            }
+        }
+    }
+
+    public void OldTowerInactiveOnSlot()
+    {
+        Collider2D[] towercols = Physics2D.OverlapPointAll(_hoverTile.transform.position, _towerMask);
+        foreach (Collider2D towercol in towercols)
+        {
+            if (towercol.gameObject.CompareTag("Tower"))
+            {
+                towercol.gameObject.SetActive(false);
+                break;
             }
         }
     }
@@ -139,6 +227,16 @@ public class PlacementManager : MonoBehaviour
         if (_dummyPlacement.GetComponent<Tower>() != null)
         {
             Destroy(_dummyPlacement.GetComponent<Tower>());
+        }
+
+        if (_dummyPlacement.GetComponent<TowerLaser>() != null)
+        {
+            Destroy(_dummyPlacement.GetComponent<TowerLaser>());
+        }
+
+        if (_dummyPlacement.GetComponent<TowerShooter>() != null)
+        {
+            Destroy(_dummyPlacement.GetComponent<TowerShooter>());
         }
 
     }
@@ -202,7 +300,17 @@ public class PlacementManager : MonoBehaviour
             Destroy(_dummyPlacement.GetComponent<Tower>());
         }
 
-         _towerObjectSelected = towerPrefab;
+        if (_dummyPlacement.GetComponent<TowerLaser>() != null)
+        {
+            Destroy(_dummyPlacement.GetComponent<TowerLaser>());
+        }
+
+        if (_dummyPlacement.GetComponent<TowerShooter>() != null)
+        {
+            Destroy(_dummyPlacement.GetComponent<TowerShooter>());
+        }
+
+        _towerObjectSelected = towerPrefab;
     }
 
 

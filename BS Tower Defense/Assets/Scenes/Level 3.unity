@@ -10164,6 +10164,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4898669780440208987, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
+      propertyPath: m_text
+      value: Basic Tower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898669781033535011, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 170.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898669781033535011, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 87.304
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898669782019913685, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
+      propertyPath: m_text
+      value: Splash Tower (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898669782414677520, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
+      propertyPath: m_text
+      value: Laser Tower (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 9041931265458906389, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_Name
       value: Button Shell
