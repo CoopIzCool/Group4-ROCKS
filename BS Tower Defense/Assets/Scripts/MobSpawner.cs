@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 //Developed by Ryan Cooper 2021
 public class MobSpawner : MonoBehaviour
@@ -25,16 +27,23 @@ public class MobSpawner : MonoBehaviour
     [SerializeField]
     private GameManager gm;
     [SerializeField]
-    private Text waveText;
+    private TMP_Text waveText;
     private List<int> waveOrder = new List<int>();
     public int weightedValue = 30;
     ObjectPooler objPool;
     private Transform spawnSpot;
     [SerializeField]
     private float scale;
+    #region Special Spawners
+    [Header("Conditional Spawners:")]
     public bool multipleEnds;
     [SerializeField]
     private Transform secondEndPoint;
+    public bool multipleSpawns;
+    [SerializeField]
+    private Transform secondSpawnPoint;
+    #endregion
+
     #endregion
 
     #region Properties
@@ -54,6 +63,7 @@ public class MobSpawner : MonoBehaviour
     {
         objPool = ObjectPooler.Instance;
         spawnSpot = transform;
+        waveText.text = 0 + " / " +  finalWave;
     }
 
     public void Update()
@@ -80,8 +90,26 @@ public class MobSpawner : MonoBehaviour
         
         for (int i = 0; i < waveOrder.Count; i++)
         {
+            Transform enemySpawnPoint;
             //create new zombie
-            GameObject enemy = objPool.SpawnFromPool(tags[waveOrder[i]], spawnSpot.position, spawnSpot.rotation);
+            if(multipleSpawns)
+            {
+                int randomSpawn = Random.Range(0, 2);
+                Debug.Log(randomSpawn);
+                if (randomSpawn == 0)
+                {
+                    enemySpawnPoint = spawnPoint;
+                }
+                else
+                {
+                    enemySpawnPoint = secondSpawnPoint;
+                }
+            }
+            else
+            {
+                enemySpawnPoint = spawnPoint;
+            }
+            GameObject enemy = objPool.SpawnFromPool(tags[waveOrder[i]], enemySpawnPoint.position, enemySpawnPoint.rotation);
             enemy.GetComponent<NavMeshAgent>().enabled = true;
             if(multipleEnds)
             {
@@ -171,9 +199,8 @@ public class MobSpawner : MonoBehaviour
             }
             else if (waveNumber > 1)
             {
-                int randomValue = Random.Range(1, 3);
-                Debug.Log(randomValue);
-                if (randomValue > 1)
+                int randomValue = Random.Range(0, 2);
+                if (randomValue == 1)
                 {
                     waveOrder.Add(1);
                     waveOrder.Add(1);
@@ -208,13 +235,13 @@ public class MobSpawner : MonoBehaviour
 
     public void activateSpawner()
     {
-        if(gameManager.paused == false)
+        if(!gameManager.paused)
         {
             if (remainders <= 0)
             {
-                this.gameObject.GetComponent<AudioSource>().Play();
+                gameObject.GetComponent<AudioSource>().Play();
                 remainders = 0;
-                //waveText.text = "Wave Number: " + waveNumber;
+                waveText.text = waveNumber + " / " + finalWave;
                 StartCoroutine(spawnWave());
             }
         }    
