@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towerObject: {fileID: 8948395270294822057, guid: 612cdc790103a524b82ca0ce60d308db, type: 3}
+  _towerAOE2: {fileID: 4183968314141233740, guid: 716a748d7068d8249b5d4756206d33a3, type: 3}
+  _towerLaser3: {fileID: 7879866838471404019, guid: a9c56d9b340b14a49b5a0bc0cc6d2f0f, type: 3}
+  _towerObjectButton: {fileID: 0}
+  _towerAOEButton: {fileID: 0}
+  _towerLaserButton: {fileID: 0}
+  _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _mask:
     serializedVersion: 2

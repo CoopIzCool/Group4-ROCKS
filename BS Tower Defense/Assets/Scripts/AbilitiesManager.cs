@@ -61,37 +61,43 @@ public class AbilitiesManager : MonoBehaviour
 
     public void Nuke()
     {
-        // TODO: Reduce premium funds
-
-        // Get all enemies
-        GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        // Kill each enemy
-        foreach (GameObject _enemy in _enemies)
+        if (_nukeCooldown == 0f)
         {
-            _enemy.GetComponent<EnemyBehavior>().Death(true);
-        }
+            // TODO: Reduce premium funds
 
-        // Reset the cooldown
-        _nukeCooldown = 30f;
+            // Get all enemies
+            GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            // Kill each enemy
+            foreach (GameObject _enemy in _enemies)
+            {
+                _enemy.GetComponent<EnemyBehavior>().Death(true);
+            }
+
+            // Reset the cooldown
+            _nukeCooldown = 30f;
+        }
     }
 
     public void Freeze()
     {
-        // Start timer
-        _freezeTimer = 5f;
-
-        // TODO: Reduce premium funds
-
-        // Get all enemies
-        GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        // Freeze each enemy
-        foreach (GameObject _enemy in _enemies)
+        if (_freezeCooldown == 0f)
         {
-            _enemy.GetComponent<PathMovement>().Agent.enabled = false;
-        }
+            // Start timer
+            _freezeTimer = 5f;
 
-        _frozen = true;
+            // TODO: Reduce premium funds
+
+            // Get all enemies
+            GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            // Freeze each enemy
+            foreach (GameObject _enemy in _enemies)
+            {
+                _enemy.GetComponent<PathMovement>().Agent.enabled = false;
+            }
+
+            _frozen = true;
+        }
     }
 }

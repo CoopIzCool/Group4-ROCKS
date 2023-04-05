@@ -45,6 +45,7 @@ public class EnemyBehavior : MonoBehaviour
         armored = false;
     }
 
+
     public void takeDamage(float damage)
     {
         if(armored)
@@ -55,8 +56,8 @@ public class EnemyBehavior : MonoBehaviour
         if (hitpoints <= 0)
         {
             Death(true);
-            Enemies._enemies.Remove(gameObject);
-            gameObject.SetActive(false);
+            //Enemies._enemies.Remove(gameObject);
+            //gameObject.SetActive(false);
         }
 
     }
@@ -79,7 +80,7 @@ public class EnemyBehavior : MonoBehaviour
     public void resetHealth()
     {
         hitpoints = maxHealth;
-        wealth = 5;
+        //wealth = 5;
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
     }
 

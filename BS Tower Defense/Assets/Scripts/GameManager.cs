@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         healthText.text = "Health: " + health;
         moneyText.text = "Money: " + money;
+        paused = false;
     }
 
     // Update is called once per frame
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverUI.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
 
     public void moneyEarned(int wealth)
