@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _range: 15
   _damage: 50
-  _timeBtwProjectiles: 1
+  _timeBtwProjectiles: 1.5
   currentTarget: {fileID: 0}
   _laserObject: {fileID: 8950027363856194561, guid: e276b18453e428547bc69c3e96227b5b, type: 3}
   _towerIsPlaced: 0
