@@ -64,7 +64,7 @@ public class Tower : MonoBehaviour
 
             if (enemyBehavior.blighted = true)
             {
-                enemyBehavior.takeDamage(-200);
+                enemyBehavior.takeDamage(-40);
             }
 
 
