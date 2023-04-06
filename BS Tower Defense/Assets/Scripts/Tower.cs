@@ -62,6 +62,11 @@ public class Tower : MonoBehaviour
             EnemyBehavior enemyBehavior = currentTarget.GetComponent<EnemyBehavior>();
             enemyBehavior.takeDamage(50);
 
+            if (enemyBehavior.blighted = true)
+            {
+                enemyBehavior.takeDamage(-200);
+            }
+
 
             StartCoroutine(AOEffect(currentTarget.transform.position));
         }

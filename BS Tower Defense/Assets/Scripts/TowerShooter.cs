@@ -57,10 +57,15 @@ public class TowerShooter : MonoBehaviour
 
         if (currentTarget != null)
         {
-            ShootLogic();
-
             EnemyBehavior enemyBehavior = currentTarget.GetComponent<EnemyBehavior>();
-            enemyBehavior.takeDamage(50);
+
+                ShootLogic();
+                enemyBehavior.takeDamage(50);
+
+                if (enemyBehavior.blighted = true)
+                {
+                    enemyBehavior.takeDamage(-200);
+                }
         }
     }
 
