@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 120
   maxHealth: 120
-  wealth: 5
+  wealth: 3
   damage: 1
   armored: 1
   scale: 0

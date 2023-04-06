@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5957a1663267ecf4f88c3c89d1c569f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 300
-  maxHealth: 300
+  hitpoints: 350
+  maxHealth: 350
   wealth: 15
   damage: 3
   armored: 1
