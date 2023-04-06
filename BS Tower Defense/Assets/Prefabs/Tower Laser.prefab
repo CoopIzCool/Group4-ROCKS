@@ -98,11 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f796955c3ec0a6641ae127a1f8c980da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 15
-  _damage: 50
-  _timeBtwProjectiles: 0.5
+  _range: 7
+  _damage: 25
+  _timeBtwProjectiles: 2
   currentTarget: {fileID: 0}
   _laserObject: {fileID: 8950027363856194561, guid: e276b18453e428547bc69c3e96227b5b, type: 3}
+  _towerIsPlaced: 0
 --- !u!61 &5959578215142718008
 BoxCollider2D:
   m_ObjectHideFlags: 0

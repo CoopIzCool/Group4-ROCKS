@@ -10166,7 +10166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4898669780440208987, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_text
-      value: Basic Tower (5)
+      value: Basic Tower (10)
       objectReference: {fileID: 0}
     - target: {fileID: 4898669781033535011, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10178,11 +10178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4898669782019913685, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_text
-      value: Splash Tower (10)
+      value: Splash Tower (15)
       objectReference: {fileID: 0}
     - target: {fileID: 4898669782414677520, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_text
-      value: Laser Tower (15)
+      value: Laser Tower (25)
       objectReference: {fileID: 0}
     - target: {fileID: 9041931265458906389, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_Name
@@ -19238,9 +19238,9 @@ MonoBehaviour:
   moneyText: {fileID: 245085019}
   gameOverUI: {fileID: 0}
   paused: 0
-  _costTower1: 5
-  _costTower2: 10
-  _costTower3: 15
+  _costTower1: 10
+  _costTower2: 15
+  _costTower3: 25
 --- !u!4 &1968581630
 Transform:
   m_ObjectHideFlags: 0

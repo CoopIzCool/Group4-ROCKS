@@ -111,7 +111,7 @@ public class PlacementManager : MonoBehaviour
 
                         break;
                     }
-                    
+
                     if (toowerlaser != null)
                     {
                         //checking for the number of towers in vicinity to each other
@@ -129,7 +129,7 @@ public class PlacementManager : MonoBehaviour
 
                         if (!towerOnSlot)
                         {
-                           _posTowers.Add(posTower);
+                            _posTowers.Add(posTower);
                         }
 
                         if (towerOnSlot)
@@ -183,7 +183,7 @@ public class PlacementManager : MonoBehaviour
         if (_hoverTile != null)
         {
             if (CheckForTower() == false)
-            { 
+            {
                 if (_gameManager.Money >= _towerSelectedCost) // if the gamemanger money tracking variable has more money then the cost for the tower, then start the logic
                 {
                     GameObject newTowerObj = Instantiate(_towerObjectSelected); //instanciating the selected prefab of the tower
@@ -196,7 +196,7 @@ public class PlacementManager : MonoBehaviour
                     newTowerObj.GetComponent<Tower>()._towerIsPlaced = true;
 
                     OldTowerInactiveOnSlot();
-                } 
+                }
                 else
                 {
                     Debug.Log("You do not have enough money to place this tower");
@@ -204,6 +204,7 @@ public class PlacementManager : MonoBehaviour
             }
         }
     }
+
 
     public void OldTowerInactiveOnSlot()
     {

@@ -10,6 +10,8 @@ public class Tower : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _timeBtwProjectiles;
 
+    [SerializeField] private GameObject _aoeEffectSprite;
+
 
     public bool _towerIsPlaced = false;
     public GameObject currentTarget;
@@ -59,7 +61,17 @@ public class Tower : MonoBehaviour
         {
             EnemyBehavior enemyBehavior = currentTarget.GetComponent<EnemyBehavior>();
             enemyBehavior.takeDamage(50);
+
+
+            StartCoroutine(AOEffect(currentTarget.transform.position));
         }
+    }
+
+    public IEnumerator AOEffect(Vector3 pos)
+    {
+        GameObject sprite = Instantiate(_aoeEffectSprite, pos, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        Destroy(sprite);
     }
 
     // Update is called once per frame

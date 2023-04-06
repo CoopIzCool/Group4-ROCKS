@@ -77,7 +77,7 @@ public class TowerLaser : MonoBehaviour
             _enemyB.takeDamage(_damage);
 
             LaserEnabler(_laserShootObject);
-            StartCoroutine(LaserDisabler(_laserShootObject, 1f));
+            StartCoroutine(LaserDisabler(_laserShootObject, 2f));
         }
     }
 

@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _range: 10
-  _damage: 70
+  _damage: 30
   _timeBtwProjectiles: 1
+  _aoeEffectSprite: {fileID: 6426240784916835489, guid: 04c666f0d3b4abd4da899612cd9eabd7, type: 3}
+  _towerIsPlaced: 0
   currentTarget: {fileID: 0}
 --- !u!61 &-3937934103674154789
 BoxCollider2D:
