@@ -2239,8 +2239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16917ec5052186648ab844811c72040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gems: 0
-  txtGemsBalance: {fileID: 1569815431}
 --- !u!1 &1015259506
 GameObject:
   m_ObjectHideFlags: 0
