@@ -158,11 +158,12 @@ public class MobSpawner : MonoBehaviour
             if (waveNumber > 5)
             {
                 int randomValue = Random.Range(0, 8);
-                int[] costs = { 1, 1, 2, 2, 3,3,3,4 };
+                int[] costs = { 1, 1, 2, 3, 3,4,4,5 };
                 if (maxCost - costs[randomValue] >= 0)
                 {
                     if (randomValue == 1 || randomValue == 5)
                     {
+                        waveOrder.Add(randomValue);
                         waveOrder.Add(randomValue);
                         waveOrder.Add(randomValue);
                         waveOrder.Add(randomValue);
@@ -179,11 +180,12 @@ public class MobSpawner : MonoBehaviour
             else if(waveNumber > 3)
             {
                 int randomValue = Random.Range(0, 4);
-                int[] costs = { 1, 1, 2, 2 };
+                int[] costs = { 1, 1, 2, 3 };
                 if(maxCost - costs[randomValue] >= 0)
                 {
                     if(randomValue == 1)
                     {
+                        waveOrder.Add(1);
                         waveOrder.Add(1);
                         waveOrder.Add(1);
                         waveOrder.Add(1);
@@ -201,6 +203,7 @@ public class MobSpawner : MonoBehaviour
                 int randomValue = Random.Range(0, 2);
                 if (randomValue == 1)
                 {
+                    waveOrder.Add(1);
                     waveOrder.Add(1);
                     waveOrder.Add(1);
                     waveOrder.Add(1);
