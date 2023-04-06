@@ -8,7 +8,7 @@ public class TowerShooter : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _timeBtwProjectiles;
 
-
+    public bool _towerIsPlaced = false;
 
     public GameObject currentTarget;
 
@@ -86,6 +86,11 @@ public class TowerShooter : MonoBehaviour
                 ShootProjectiles();
                 _nextTimeToShoot = Time.time + _timeBtwProjectiles;
             }
+        }
+
+        if (!_towerIsPlaced)
+        {
+            return;
         }
     }
 }

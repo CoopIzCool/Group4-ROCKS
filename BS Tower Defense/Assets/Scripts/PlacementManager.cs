@@ -191,6 +191,10 @@ public class PlacementManager : MonoBehaviour
                     newTowerObj.transform.position = _hoverTile.transform.position;
                     _gameManager.moneyEarned(-_towerSelectedCost);
 
+                    newTowerObj.GetComponent<TowerShooter>()._towerIsPlaced = true;
+                    newTowerObj.GetComponent<TowerLaser>()._towerIsPlaced = true;
+                    newTowerObj.GetComponent<Tower>()._towerIsPlaced = true;
+
                     OldTowerInactiveOnSlot();
                 } 
                 else
