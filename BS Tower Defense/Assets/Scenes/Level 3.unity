@@ -18197,7 +18197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000030517578}
+  m_AnchoredPosition: {x: 37, y: -0.000030517578}
   m_SizeDelta: {x: 837.2764, y: 453.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483108458
@@ -19236,7 +19236,7 @@ MonoBehaviour:
   health: 10
   healthText: {fileID: 38080008}
   moneyText: {fileID: 245085019}
-  gameOverUI: {fileID: 0}
+  GameOverUI: {fileID: 1647004411}
   paused: 0
   _costTower1: 10
   _costTower2: 15

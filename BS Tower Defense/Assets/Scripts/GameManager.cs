@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text moneyText;
 
     [SerializeField]
-    public GameObject gameOverUI;
+    public GameObject GameOverUI;
 
     public bool paused;
     #endregion Fields
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        GameOverUI.SetActive(true);
     }
 
     public void moneyEarned(int wealth)
