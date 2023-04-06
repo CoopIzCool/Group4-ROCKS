@@ -16,6 +16,8 @@ public class TowerLaser : MonoBehaviour
 
     public GameObject _laserObject;
 
+    public bool _towerIsPlaced = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +77,7 @@ public class TowerLaser : MonoBehaviour
             _enemyB.takeDamage(_damage);
 
             LaserEnabler(_laserShootObject);
-            StartCoroutine(LaserDisabler(_laserShootObject, 1f));
+            StartCoroutine(LaserDisabler(_laserShootObject, 2f));
         }
     }
 
@@ -114,6 +116,12 @@ public class TowerLaser : MonoBehaviour
                 LaserWeaponShooter();
                 _nextTimeToShoot = Time.time + _timeBtwProjectiles;
             }
+        }
+
+
+        if (!_towerIsPlaced)
+        {
+            return;
         }
     }
 }

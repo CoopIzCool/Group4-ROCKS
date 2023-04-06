@@ -18377,7 +18377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4898669780440208987, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_text
-      value: Basic Tower (5)
+      value: Basic Tower (10)
       objectReference: {fileID: 0}
     - target: {fileID: 4898669781033535011, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -18397,11 +18397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4898669782019913685, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_text
-      value: Splash Tower (10)
+      value: Splash Tower (15)
       objectReference: {fileID: 0}
     - target: {fileID: 4898669782414677520, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_text
-      value: Laser Tower (15)
+      value: Laser Tower (25)
       objectReference: {fileID: 0}
     - target: {fileID: 9041931265458906389, guid: 2f91991f7549d1f47be8e38c0768255c, type: 3}
       propertyPath: m_Name
@@ -19308,6 +19308,18 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 38080008}
+    - target: {fileID: 360877936863736118, guid: 7697cea6f43a465498d0f2abc9fa6d4d, type: 3}
+      propertyPath: _costTower1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 360877936863736118, guid: 7697cea6f43a465498d0f2abc9fa6d4d, type: 3}
+      propertyPath: _costTower2
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 360877936863736118, guid: 7697cea6f43a465498d0f2abc9fa6d4d, type: 3}
+      propertyPath: _costTower3
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 360877936863736119, guid: 7697cea6f43a465498d0f2abc9fa6d4d, type: 3}
       propertyPath: m_Name
       value: GameManager
