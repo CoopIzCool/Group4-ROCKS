@@ -17,6 +17,8 @@ public class EnemyBehavior : MonoBehaviour
     public float scale;
     public bool blighted;
     public float bufferTime;
+    private float redValue;
+    private float redIncrementer;
     #endregion
 
     #region Properties
@@ -43,6 +45,8 @@ public class EnemyBehavior : MonoBehaviour
         //damage = 1;
         //gameObject.GetComponent<NavMeshAgent>().speed = 2;
         armored = false;
+        redValue = GetComponent<SpriteRenderer>().color.r;
+        //redIncrementer = ( 1- redValue) / 100.0f;
     }
 
 
@@ -53,6 +57,7 @@ public class EnemyBehavior : MonoBehaviour
             damage /= 2;
         }
         hitpoints -= damage;
+        ShowDamage(damage);
         if (hitpoints <= 0)
         {
             Death(true);
@@ -84,6 +89,13 @@ public class EnemyBehavior : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
     }
 
-    
+    private void ShowDamage(float damage)
+    {
+        float dealtDamagePercent = damage / maxHealth;
+        dealtDamagePercent = Mathf.Clamp(dealtDamagePercent, 0.001f, 1.0f);
+        float redIncrementValue = dealtDamagePercent * (1-redValue);
+        GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r + redIncrementValue, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b);
+        Debug.Log(GetComponent<SpriteRenderer>().color.r);
+    }
 
 }

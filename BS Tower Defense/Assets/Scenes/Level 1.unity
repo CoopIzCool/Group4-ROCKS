@@ -11790,7 +11790,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659297042}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 0.99, y: 0.99, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -18434,7 +18434,7 @@ MonoBehaviour:
   health: 10
   healthText: {fileID: 38080008}
   moneyText: {fileID: 245085019}
-  gameOverUI: {fileID: 0}
+  GameOverUI: {fileID: 1647004411}
   paused: 0
   _costTower1: 10
   _costTower2: 15

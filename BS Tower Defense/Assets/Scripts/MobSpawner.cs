@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 //Developed by Ryan Cooper 2021

@@ -19305,6 +19305,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 245085019}
     - target: {fileID: 360877936863736118, guid: 7697cea6f43a465498d0f2abc9fa6d4d, type: 3}
+      propertyPath: GameOverUI
+      value: 
+      objectReference: {fileID: 1647004411}
+    - target: {fileID: 360877936863736118, guid: 7697cea6f43a465498d0f2abc9fa6d4d, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 38080008}
