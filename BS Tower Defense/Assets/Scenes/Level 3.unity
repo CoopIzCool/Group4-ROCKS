@@ -689,6 +689,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171491784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 863207902518442901, guid: 472f4e7f30f6f3f4bb5a13a68b0721f6, type: 3}
+  m_PrefabInstance: {fileID: 1515308443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &186820082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10959,6 +10970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d825000747a705145bd09c08ebb10676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gems: 0
+  gm: {fileID: 1968581629}
 --- !u!4 &906054053
 Transform:
   m_ObjectHideFlags: 0
@@ -20246,8 +20259,10 @@ MonoBehaviour:
   health: 10
   healthText: {fileID: 38080008}
   moneyText: {fileID: 245085019}
+  gemsBalance: {fileID: 171491784}
   GameOverUI: {fileID: 1647004411}
   paused: 0
+  gems: 0
   _costTower1: 10
   _costTower2: 15
   _costTower3: 25

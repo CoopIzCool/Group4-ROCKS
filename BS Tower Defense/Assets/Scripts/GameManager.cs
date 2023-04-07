@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 //Developed by Ryan Cooper 2021
 public class GameManager : MonoBehaviour
@@ -21,11 +22,14 @@ public class GameManager : MonoBehaviour
     public TMP_Text healthText;
     [SerializeField]
     public TMP_Text moneyText;
-
+    [SerializeField]
+    public TMP_Text gemsBalance;
     [SerializeField]
     public GameObject GameOverUI;
 
     public bool paused;
+    [SerializeField]
+    public int gems;
     #endregion Fields
 
     public int Money { get { return money; } }
@@ -39,8 +43,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gems = Variables.Saved.Get<int>("gems");
         healthText.text = "Health: " + health;
         moneyText.text = "Money: " + money;
+        gemsBalance.text = gems.ToString();
         paused = false;
     }
 

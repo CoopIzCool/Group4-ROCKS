@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbilitiesManager : MonoBehaviour
@@ -9,6 +11,9 @@ public class AbilitiesManager : MonoBehaviour
     private float _freezeTimer;
     private float _freezeCooldown;
     private float _nukeCooldown;
+    [SerializeField]
+    public int gems;
+    public GameManager gm;
     #endregion
 
     // Start is called before the first frame update
@@ -18,6 +23,7 @@ public class AbilitiesManager : MonoBehaviour
         _freezeTimer = 0f;
         _freezeCooldown = 15f;
         _nukeCooldown = 30f;
+        gems = Variables.Saved.Get<int>("gems");
     }
 
     // Update is called once per frame
@@ -61,9 +67,12 @@ public class AbilitiesManager : MonoBehaviour
 
     public void Nuke()
     {
-        if (_nukeCooldown == 0f)
+        if (_nukeCooldown == 0f && gems >= 100)
         {
             // TODO: Reduce premium funds
+            gems -= 100; 
+            gm.gemsBalance.text = gems.ToString();
+            Debug.Log(gems);
 
             // Get all enemies
             GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -76,17 +85,21 @@ public class AbilitiesManager : MonoBehaviour
 
             // Reset the cooldown
             _nukeCooldown = 30f;
+
         }
     }
 
     public void Freeze()
     {
-        if (_freezeCooldown == 0f)
+        if (_freezeCooldown == 0f && gems >= 50)
         {
             // Start timer
             _freezeTimer = 5f;
 
             // TODO: Reduce premium funds
+            gems -= 50;
+            Debug.Log(gems);
+            gm.gemsBalance.text = gems.ToString();
 
             // Get all enemies
             GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
