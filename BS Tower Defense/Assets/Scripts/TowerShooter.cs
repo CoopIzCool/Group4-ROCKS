@@ -8,6 +8,9 @@ public class TowerShooter : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _timeBtwProjectiles;
 
+
+    public bool _isShooting;
+
     public bool _towerIsPlaced = false;
 
     public GameObject currentTarget;
@@ -57,15 +60,22 @@ public class TowerShooter : MonoBehaviour
 
         if (currentTarget != null)
         {
-            ShootLogic();
-
             EnemyBehavior enemyBehavior = currentTarget.GetComponent<EnemyBehavior>();
-            enemyBehavior.takeDamage(50);
+
+                ShootLogic();
+                enemyBehavior.takeDamage(50);
+
+                if (enemyBehavior.blighted = true)
+                {
+                    enemyBehavior.takeDamage(-40);
+                   // _isShooting = false;
+                }
         }
     }
 
     void ShootLogic()
     {
+       // _isShooting = true;
         GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
         (Vector3 direction, float _angleOfInstanciation) =
                 ((currentTarget.transform.position - transform.position).normalized,

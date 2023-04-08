@@ -14515,6 +14515,10 @@ PrefabInstance:
       propertyPath: spawnWaveButton
       value: 
       objectReference: {fileID: 264412793}
+    - target: {fileID: 5625799966479854689, guid: fc333ac7c5b2e104c9b7113850086706, type: 3}
+      propertyPath: tags.Array.data[0]
+      value: Plague
+      objectReference: {fileID: 0}
     - target: {fileID: 6806499426870455934, guid: fc333ac7c5b2e104c9b7113850086706, type: 3}
       propertyPath: m_Name
       value: Spawner
