@@ -25,8 +25,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public TMP_Text gemsBalance;
     [SerializeField]
+    public TMP_Text gemsBalanceBuyMenu;
+    [SerializeField]
     public GameObject GameOverUI;
 
+    public GameObject buyMenu;
     public bool paused;
     [SerializeField]
     public int gems;
@@ -69,6 +72,22 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         GameOverUI.SetActive(true);
+    }
+
+    public void BuyMenu()
+    {
+        buyMenu.SetActive(true);
+        Time.timeScale = 0f;
+        PauseMenu.GameIsPaused = true;
+    }
+
+    public void CloseBuyMenu()
+    {
+        gems = Variables.Saved.Get<int>("gems");
+        gemsBalance.text = gems.ToString();
+        buyMenu.SetActive(false);
+        Time.timeScale = 1f;
+        PauseMenu.GameIsPaused = false;
     }
 
     public void moneyEarned(int wealth)

@@ -72,6 +72,7 @@ public class AbilitiesManager : MonoBehaviour
             // TODO: Reduce premium funds
             gems -= 100; 
             gm.gemsBalance.text = gems.ToString();
+            gm.gemsBalanceBuyMenu.text = gems.ToString();
             Debug.Log(gems);
 
             // Get all enemies
@@ -100,6 +101,7 @@ public class AbilitiesManager : MonoBehaviour
             gems -= 50;
             Debug.Log(gems);
             gm.gemsBalance.text = gems.ToString();
+            gm.gemsBalanceBuyMenu.text = gems.ToString();
 
             // Get all enemies
             GameObject[] _enemies = GameObject.FindGameObjectsWithTag("Enemy");
